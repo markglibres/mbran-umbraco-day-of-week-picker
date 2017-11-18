@@ -8,8 +8,12 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configurations", "Configurations", "{BF6EA727-0390-4A1B-BC09-2B482CADF0CF}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
-		nuget\MBran.DayOfWeekPicker.nuspec = nuget\MBran.DayOfWeekPicker.nuspec
 		src\packages.config = src\packages.config
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nuget", "nuget", "{EFAB5A59-8982-40A0-A566-F60D43099566}"
+	ProjectSection(SolutionItems) = preProject
+		nuget\MBran.DayOfWeekPicker.0.1.nuspec = nuget\MBran.DayOfWeekPicker.0.1.nuspec
 	EndProjectSection
 EndProject
 Global
@@ -25,5 +29,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{EFAB5A59-8982-40A0-A566-F60D43099566} = {BF6EA727-0390-4A1B-BC09-2B482CADF0CF}
 	EndGlobalSection
 EndGlobal

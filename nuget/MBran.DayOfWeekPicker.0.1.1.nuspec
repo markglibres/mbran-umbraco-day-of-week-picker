@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>MBran.DayOfWeekPicker</id>
+    <version>0.1.0</version>
+    <title>MBran's Umbraco DayOfWeek Picker Data Type</title>
+    <authors>Mark Gil Libres</authors>
+    <owners>Mark Gil Libres</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>https://github.com/markglibres/mbran-umbraco-day-of-week-picker/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/markglibres/mbran-umbraco-day-of-week-picker</projectUrl>
+    <description>Day Of Week Picker for Umbraco 7</description>
+    <releaseNotes></releaseNotes>
+    <copyright>Copyright 2017</copyright>
+    <tags>Umbraco DayOfWeekPicker MBran</tags>
+    <dependencies>
+      <group targetFramework=".NETFramework4.5.2">
+        <dependency id="UmbracoCms.Core" version="7.7.6" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="content\App_Plugins\MBran.DayOfWeekPicker\Controllers\dayOfWeekPicker.editor.js" target="content\App_Plugins\MBran.DayOfWeekPicker\Controllers\dayOfWeekPicker.editor.js" />
+    <file src="content\App_Plugins\MBran.DayOfWeekPicker\Views\dayOfWeekPicker.editor.html" target="content\App_Plugins\MBran.DayOfWeekPicker\Views\dayOfWeekPicker.editor.html" />
+    <file src="content\App_Plugins\MBran.DayOfWeekPicker\package.manifest" target="content\App_Plugins\MBran.DayOfWeekPicker\package.manifest" />
+    <file src="lib\net452\MBran.DayOfWeekPicker.dll" target="lib\net452\MBran.DayOfWeekPicker.dll" />
+  </files>
+</package>

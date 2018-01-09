@@ -1,0 +1,14 @@
+﻿{
+    'propertyEditors' : [
+        {
+            alias: 'MBran.DayOfWeekPicker',
+            name: 'Day of Week Picker',
+            editor: {
+                view:'~/App_Plugins/MBran.DayOfWeekPicker/Views/dayOfWeekPicker.editor.html'
+            }
+        }
+    ],
+    'javascript' : [
+        '~/App_Plugins/MBran.DayOfWeekPicker/Controllers/dayOfWeekPicker.editor.js'
+    ]
+}

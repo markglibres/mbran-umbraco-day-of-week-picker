@@ -286,3 +286,10 @@ __pycache__/
 *.btm.cs
 *.odx.cs
 *.xsd.cs
+
+!Umbraco.sdf
+src/Test/App_Data/Logs/
+
+src/Test/App_Data/NuGetBackup/
+
+src/Test/App_Data/TEMP/

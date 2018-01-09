@@ -1,0 +1,12 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Home>
+@using System.Linq
+@using MBran.DayOfWeekPicker
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+	Layout = null;
+}
+
+@foreach (var day in Model.Content.DayOfWeek)
+{
+    <div>@day.GetAbbreviatedDayName()</div>
+}

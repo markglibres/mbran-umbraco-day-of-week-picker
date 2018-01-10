@@ -9,7 +9,9 @@ namespace MBran.DayOfWeekPicker
 {
 
     [PropertyValueType(typeof(IEnumerable<DayOfWeek>))]
-    [PropertyValueCache(PropertyCacheValue.All, PropertyCacheLevel.Content)]
+    [PropertyValueCache(PropertyCacheValue.Source, PropertyCacheLevel.Content)]
+    [PropertyValueCache(PropertyCacheValue.Object, PropertyCacheLevel.None)]
+    [PropertyValueCache(PropertyCacheValue.XPath, PropertyCacheLevel.Content)]
     public class DayOfWeekValueConverter : IPropertyValueConverter
     {
         public bool IsConverter(PublishedPropertyType propertyType)
@@ -25,9 +27,10 @@ namespace MBran.DayOfWeekPicker
         public object ConvertSourceToObject(PublishedPropertyType propertyType, object source, bool preview)
         {
             var model = source as IEnumerable<string>;
+            bool dayIntValue;
             return model?.Select((selected, index) =>
                     new { IsSelected = selected, DayIndex = index })
-                .Where(day => bool.TryParse(day.IsSelected, out _))
+                .Where(day => bool.TryParse(day.IsSelected, out dayIntValue))
                 .Select(day => (DayOfWeek)day.DayIndex);
         }
 

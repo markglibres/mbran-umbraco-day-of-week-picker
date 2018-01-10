@@ -8,10 +8,8 @@ using Umbraco.Core.PropertyEditors;
 namespace MBran.DayOfWeekPicker
 {
 
-    [PropertyValueType(typeof(IEnumerable<DayOfWeek>))]
-    [PropertyValueCache(PropertyCacheValue.Source, PropertyCacheLevel.Content)]
-    [PropertyValueCache(PropertyCacheValue.Object, PropertyCacheLevel.None)]
-    [PropertyValueCache(PropertyCacheValue.XPath, PropertyCacheLevel.Content)]
+    [PropertyValueType(typeof(DaysOfWeek))]
+    [PropertyValueCache(PropertyCacheValue.All, PropertyCacheLevel.Content)]
     public class DayOfWeekValueConverter : IPropertyValueConverter
     {
         public bool IsConverter(PublishedPropertyType propertyType)
@@ -28,10 +26,21 @@ namespace MBran.DayOfWeekPicker
         {
             var model = source as IEnumerable<string>;
             bool dayIntValue;
-            return model?.Select((selected, index) =>
-                    new { IsSelected = selected, DayIndex = index })
-                .Where(day => bool.TryParse(day.IsSelected, out dayIntValue))
-                .Select(day => (DayOfWeek)day.DayIndex);
+
+            var days = model?.Select((selected, index) =>
+                    new {IsSelected = selected, DayIndex = index})
+                .Where(day => bool.TryParse(day.IsSelected, out dayIntValue) && dayIntValue)
+                .Select(day => (DayOfWeek) day.DayIndex);
+
+            DaysOfWeek sourceModel = new DaysOfWeek
+            {
+                DayOfWeek = days,
+                Names = days.GetNames(),
+                AbbreviatedNames = days.GetAbbreviatedNames()
+            };
+
+            return sourceModel;
+
         }
 
         public object ConvertSourceToXPath(PublishedPropertyType propertyType, object source, bool preview)

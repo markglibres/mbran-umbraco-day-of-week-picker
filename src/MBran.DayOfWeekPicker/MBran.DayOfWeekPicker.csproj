@@ -209,6 +209,7 @@
     <Compile Include="Constants.cs" />
     <Compile Include="DayOfWeekExtensions.cs" />
     <Compile Include="DayOfWeekValueConverter.cs" />
+    <Compile Include="DaysOfWeek.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
